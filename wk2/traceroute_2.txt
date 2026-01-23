@@ -1,0 +1,18 @@
+C:\Users\cvsd1>tracert 159.203.45.140
+
+Tracing route to 159.203.45.140 over a maximum of 30 hops
+
+  1     4 ms     5 ms     5 ms  10.0.64.1
+  2    12 ms     4 ms     4 ms  10.1.4.6
+  3     *        *        *     Request timed out.
+  4     *        *        *     Request timed out.
+  5     *        *        *     Request timed out.
+  6     *        *        *     Request timed out.
+  7     *        *        *     Request timed out.
+  8     *        *        *     Request timed out.
+  9     *        *        *     Request timed out.
+ 10     *        *        *     Request timed out.
+ 11     *        *        *     Request timed out.
+ 12     8 ms     7 ms     7 ms  159.203.45.140
+
+Trace complete.
