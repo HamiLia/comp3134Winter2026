@@ -1,0 +1,96 @@
+=========================
+1) Domain: google.com
+- Name : GOOGLE.COM
+- Registry Domain ID: 2138514_DOMAIN_COM-VRSN
+- Registered On: 1997-09-15T04:00:00Z
+- Expires On: 2028-09-14T04:00:00Z
+- Updated On: 2019-09-09T15:39:04Z
+- Domain Status
+    client delete prohibited
+    client transfer prohibited
+    client update prohibited
+    server delete prohibited
+    server transfer prohibited
+    server update prohibited
+- Name Servers
+    NS1.GOOGLE.COM
+    NS2.GOOGLE.COM
+    NS3.GOOGLE.COM
+    NS4.GOOGLE.COM
+
+=========================
+2) Domain: amazon.com
+- Name: AMAZON.COM
+- Registry Domain ID: 281209_DOMAIN_COM-VRSN
+- Registered On: 1994-11-01T05:00:00Z
+- Expires On: 2026-10-31T04:00:00Z
+-Updated On: 2025-07-31T17:49:55Z
+-Domain Status
+    client delete prohibited
+    client transfer prohibited
+    client update prohibited
+    server delete prohibited
+    server transfer prohibited
+    server update prohibited
+- Name Servers
+    NS1.AMZNDNS.CO.UK   
+    NS1.AMZNDNS.COM 
+    NS1.AMZNDNS.NET
+    NS1.AMZNDNS.ORG
+    NS2.AMZNDNS.CO.UK
+    NS2.AMZNDNS.COM
+    NS2.AMZNDNS.NET
+    NS2.AMZNDNS.ORG
+
+=========================
+3) Domain: wikimedia.org
+- Name: wikipedia.org
+- Registry Domain ID: ﹣
+- Registered On: 2001-01-13T00:12:14.754Z
+- Expires On: 2027-01-13T00:12:14Z
+- Updated On: 2025-12-17T09:26:13.643Z
+- Domain Status
+    client delete prohibited
+    client transfer prohibited
+    client update prohibited
+- Name Servers
+    ns0.wikimedia.org
+    ns1.wikimedia.org
+    ns2.wikimedia.org
+
+========================
+4) Domain: github.com
+- Name: GITHUB.COM
+- Registry Domain ID: 1264983250_DOMAIN_COM-VRSN
+- Registered On: 2007-10-09T18:20:50Z
+- Expires On: 2026-10-09T18:20:50Z
+- Updated On: 2024-09-07T09:16:32Z
+- Domain Status
+    client delete prohibited
+    client transfer prohibited
+    client update prohibited
+- Name Servers
+    DNS1.P08.NSONE.NET
+    DNS2.P08.NSONE.NET
+    DNS3.P08.NSONE.NET
+    DNS4.P08.NSONE.NET
+    NS-1283.AWSDNS-32.ORG
+    NS-1707.AWSDNS-21.CO.UK
+    NS-421.AWSDNS-52.COM
+    NS-520.AWSDNS-01.NET
+
+========================
+5) Domain: naver.com
+- Name: NAVER.COM
+- Registry Domain ID: 793803_DOMAIN_COM-VRSN
+- Registered On: 1997-09-12T04:00:00Z
+- Expires On: 2032-09-11T04:00:00Z
+- Updated On: 2025-10-22T09:07:31Z
+Domain Status
+    client delete prohibited
+    client transfer prohibited
+    client update prohibited
+Name Servers
+    NS1.NAVER.COM
+    NS2.NAVER.COM
+    NS3.NAVER.COM
