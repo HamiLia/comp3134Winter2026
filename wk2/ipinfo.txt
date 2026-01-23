@@ -1,0 +1,53 @@
+====================================
+Domain: openai.com
+IP Address: 172.64.154.211
+Geolocation: United States - San Francisco
+ISP: CloudFlare Inc.
+====================================
+
+====================================
+Domain: microsoft.com
+
+IP Address: 13.107.246.41
+Geolocation: United States - Washington - Redmond
+ISP: Microsoft Corporation
+
+IP Address: 13.107.213.41
+Geolocation: United States - Washington - Redmond
+ISP: Microsoft Corporation
+====================================
+
+====================================
+Domain: bbc.com
+
+IP Address: 151.101.0.81
+Geolocation: United States - California - San Francisco
+ISP: Fastly, Inc.
+
+IP Address: 151.101.64.81
+Geolocation: United States - California - San Francisco
+ISP: Fastly, Inc.
+
+IP Address: 151.101.128.81
+Geolocation: United States - California - San Francisco
+ISP: Fastly, Inc.
+
+IP Address: 151.101.192.81
+Geolocation: United States - California - San Francisco
+ISP: Fastly, Inc.
+====================================
+
+====================================
+Domain: stackoverflow.com
+
+IP Address: 198.252.206.1
+Geolocation: United States
+ISP: Cloudflare, Inc.
+====================================
+====================================
+Domain: apple.com
+
+IP Address: 17.253.144.10
+Geolocation: United States - California - Cupertino
+ISP: Apple Inc.
+====================================
