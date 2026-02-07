@@ -1,0 +1,15 @@
+18:45:41.620386 IP soojeong-VirtualBox.48036 > 134.43.190.35.bc.googleusercontent.com.https: Flags [F.], seq 2098, ack 665, win 65535, length 0
+18:45:41.620624 IP 134.43.190.35.bc.googleusercontent.com.https > soojeong-VirtualBox.48036: Flags [.], ack 2099, win 65535, length 0
+18:45:41.653759 IP ol-in-f154.1e100.net.https > soojeong-VirtualBox.48530: UDP, length 124
+18:45:41.654074 IP 584.bm-nginx-loadbalancer.mgmt.nym2.adnexus.net.https > soojeong-VirtualBox.49052: Flags [P.], seq 207:2850, ack 1991, win 65535, length 343
+18:45:41.654076 IP ec2-184-73-170-80.compute-1.amazonaws.com.https > soojeong-VirtualBox.57508: Flags [P.], seq 4248:4521, ack 2024, win 65535, length 273
+18:45:41.654077 IP ec2-184-73-170-80.compute-1.amazonaws.com.https > soojeong-VirtualBox.57500: Flags [P.], seq 4248:4521, ack 2024, win 65535, length 273
+18:45:41.654078 IP 150.171.22.12.https > soojeong-VirtualBox.56254: Flags [P.], seq 4870:5391, ack 2094, win 65535, length 521
+18:45:41.654078 IP 134.43.190.35.bc.googleusercontent.com.https > soojeong-VirtualBox.48036: Flags [P.], seq 4665:4696, ack 2099, win 65535, length 31
+18:45:41.654079 IP 584.bm-nginx-loadbalancer.mgmt.nym2.adnexus.net.https > soojeong-VirtualBox.49046: Flags [P.], seq 207:2850, ack 1991, win 65535, length 343
+18:45:41.654080 IP ec2-184-198-131-12.compute-1.amazonaws.com.https > soojeong-VirtualBox.38930: Flags [P.], seq 4491:4764, ack 2048, win 65535, length 273
+^C
+27423 packets captured
+27526 packets received by filter
+0 packets dropped by kernel
+soojeong@soojeong-VirtualBox:~$

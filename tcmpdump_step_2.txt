@@ -1,0 +1,19 @@
+soojeong@soojeong-VirtualBox:~$ sudo tcpdump -i enp0s3 -c 10
+[sudo] soojeong 암호:
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+
+IP 10.0.2.15 > 192.178.192.102: ICMP echo request, id 1, seq 1, length 64
+IP 192.178.192.102 > 10.0.2.15: ICMP echo reply, id 1, seq 1, length 64
+IP 10.0.2.15 > 192.178.192.102: ICMP echo request, id 1, seq 2, length 64
+IP 192.178.192.102 > 10.0.2.15: ICMP echo reply, id 1, seq 2, length 64
+IP 10.0.2.15 > 192.178.192.102: ICMP echo request, id 1, seq 3, length 64
+IP 192.178.192.102 > 10.0.2.15: ICMP echo reply, id 1, seq 3, length 64
+IP 10.0.2.15 > 192.178.192.102: ICMP echo request, id 1, seq 4, length 64
+IP 192.178.192.102 > 10.0.2.15: ICMP echo reply, id 1, seq 4, length 64
+IP 10.0.2.15 > 192.178.192.102: ICMP echo request, id 1, seq 5, length 64
+IP 192.178.192.102 > 10.0.2.15: ICMP echo reply, id 1, seq 5, length 64
+
+10 packets captured
+10 packets received by filter
+0 packets dropped by kernel

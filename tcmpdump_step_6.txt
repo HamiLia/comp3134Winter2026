@@ -1,0 +1,28 @@
+soojeong@soojeong-VirtualBox:~$ sudo tcpdump -i enp0s3 -tttt
+[sudo] soojeong 암호:
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+2026-02-06 18:50:30.700671 IP soojeong-VirtualBox.48326 > 151.101.125.91.https: Flags [P.], seq 2879611265:2879611311, ack 513607474, win 65535, length 46
+2026-02-06 18:50:30.701013 IP 151.101.125.91.https > soojeong-VirtualBox.48326: Flags [.], ack 46, win 65535, length 0
+2026-02-06 18:50:30.701118 IP soojeong-VirtualBox.48326 > 151.101.125.91.https: Flags [P.], seq 46:77, ack 1, win 65535, length 31
+2026-02-06 18:50:30.701218 IP soojeong-VirtualBox.48326 > 151.101.125.91.https: Flags [F.], seq 77, ack 1, win 65535, length 0
+2026-02-06 18:50:30.701524 IP 151.101.125.91.https > soojeong-VirtualBox.48326: Flags [.], ack 77, win 65535, length 0
+2026-02-06 18:50:30.701525 IP 151.101.125.91.https > soojeong-VirtualBox.48326: Flags [F.], ack 78, win 65535, length 0
+2026-02-06 18:50:30.787888 IP soojeong-VirtualBox.35067 > 10.57.189.170.domain: 57992+ PTR? 91.125.101.151.in-addr.arpa. (45)
+2026-02-06 18:50:30.801113 IP 151.101.125.91.https > soojeong-VirtualBox.48326: Flags [P.], seq 1:32, ack 78, win 65535, length 31
+2026-02-06 18:50:30.801140 IP soojeong-VirtualBox.48326 > 151.101.125.91.https: Flags [R], seq 2879611343, win 0, length 0
+2026-02-06 18:50:30.928159 IP 10.57.189.170.domain > soojeong-VirtualBox.35067: 57992 NXDomain 0/1/0 (129)
+2026-02-06 18:50:30.929200 IP soojeong-VirtualBox.58031 > 10.57.189.170.domain: 52838+ PTR? 15.2.0.10.in-addr.arpa. (40)
+2026-02-06 18:50:30.947318 IP 10.57.189.170.domain > soojeong-VirtualBox.58031: 52838 NXDomain 0/0/0 (40)
+2026-02-06 18:50:30.949015 IP soojeong-VirtualBox.55829 > 10.57.189.170.domain: 1872+ PTR? 170.189.57.10.in-addr.arpa. (44)
+2026-02-06 18:50:31.030589 IP 10.57.189.170.domain > soojeong-VirtualBox.55829: 1872 NXDomain 0/1/0 (139)
+2026-02-06 18:50:32.715883 IP lcyyzb-in-f113.1e100.net > soojeong-VirtualBox: ICMP echo reply, id 6485, seq 2, length 64
+2026-02-06 18:50:33.650121 IP soojeong-VirtualBox > lcyyzb-in-f113.1e100.net: ICMP echo request, id 6485, seq 3, length 64
+2026-02-06 18:50:33.726246 IP lcyyzb-in-f113.1e100.net > soojeong-VirtualBox: ICMP echo reply, id 6485, seq 3, length 64
+2026-02-06 18:50:34.657583 IP soojeong-VirtualBox > lcyyzb-in-f113.1e100.net: ICMP echo request, id 6485, seq 4, length 64
+2026-02-06 18:50:34.765005 IP lcyyzb-in-f113.1e100.net > soojeong-VirtualBox: ICMP echo reply, id 6485, seq 4, length 64
+2026-02-06 18:50:35.658669 IP soojeong-VirtualBox > lcyyzb-in-f113.1e100.net: ICMP echo request, id 6485, seq 5, length 64
+^C
+27 packets captured
+27 packets received by filter
+0 packets dropped by kernel

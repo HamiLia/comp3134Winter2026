@@ -1,0 +1,20 @@
+soojeong@soojeong-VirtualBox:~$ sudo tcpdump -i enp0s3 icmp
+[sudo] soojeong 암호:
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+18:48:53.660809 IP soojeong-VirtualBox > pnyyzb-in-f139.1e100.net: ICMP echo request, id 6446, seq 1, length 64
+18:48:53.695063 IP pnyyzb-in-f139.1e100.net > soojeong-VirtualBox: ICMP echo reply, id 6446, seq 1, length 64
+18:48:54.663643 IP soojeong-VirtualBox > pnyyzb-in-f139.1e100.net: ICMP echo request, id 6446, seq 2, length 64
+18:48:54.704812 IP pnyyzb-in-f139.1e100.net > soojeong-VirtualBox: ICMP echo reply, id 6446, seq 2, length 64
+18:48:55.664238 IP soojeong-VirtualBox > pnyyzb-in-f139.1e100.net: ICMP echo request, id 6446, seq 3, length 64
+18:48:55.731201 IP pnyyzb-in-f139.1e100.net > soojeong-VirtualBox: ICMP echo reply, id 6446, seq 3, length 64
+18:48:56.665120 IP soojeong-VirtualBox > pnyyzb-in-f139.1e100.net: ICMP echo request, id 6446, seq 4, length 64
+18:48:56.734568 IP pnyyzb-in-f139.1e100.net > soojeong-VirtualBox: ICMP echo reply, id 6446, seq 4, length 64
+18:48:57.669279 IP soojeong-VirtualBox > pnyyzb-in-f139.1e100.net: ICMP echo request, id 6446, seq 5, length 64
+18:48:57.725721 IP pnyyzb-in-f139.1e100.net > soojeongong-VirtualBox: ICMP echo reply, id 6446, seq 5, length 64
+18:48:58.670989 IP soojeong-VirtualBox > pnyyzb-in-f139.1e100.net: ICMP echo request, id 6446, seq 6, length 64
+18:48:58.810395 IP pnyyzb-in-f139.1e100.net > soojeong-VirtualBox: ICMP echo reply, id 6446, seq 6, length 64
+^C
+12 packets captured
+12 packets received by filter
+0 packets dropped by kernel

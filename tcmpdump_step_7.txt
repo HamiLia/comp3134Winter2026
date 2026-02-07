@@ -1,0 +1,28 @@
+soojeong@soojeong-VirtualBox:~$ sudo tcpdump -i enp0s3 -s 0
+[sudo] soojeong 암호:
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+18:53:25.372875 IP soojeong-VirtualBox.33814 > 10.57.189.170.domain: 26041+ A? connectivity-check.ubuntu.com. (47)
+18:53:25.379849 IP soojeong-VirtualBox.44786 > 10.57.189.170.domain: 16997+ PTR? 170.189.57.10.in-addr.arpa. (44)
+18:53:25.390222 IP 10.57.189.170.domain > soojeong-VirtualBox.44786: 16997 NXDomain 0/0/0 (44)
+18:53:25.391321 IP soojeong-VirtualBox.44914 > 10.57.189.170.domain: 61417+ PTR? 15.2.0.10.in-addr.arpa. (40)
+18:53:25.407240 IP 10.57.189.170.domain > soojeong-VirtualBox.33814: 26041 12/0/0 A 185.125.190.18, A 185.125.190.49, A 185.125.190.48, A 185.125.190.98, A 185.125.190.97, A 91.189.91.97, A 91.189.91.98, A 91.189.91.96, A 91.189.91.48, A 91.189.91.49, A 185.125.190.17 (239)
+18:53:25.407244 IP 10.57.189.170.domain > soojeong-VirtualBox.44914: 61417 NXDomain 0/0/0 (40)
+18:53:25.408989 IP soojeong-VirtualBox.59660 > is-content-cache-2.ps5.canonical.com.http: Flags [S], seq 1619368881, win 64240, options [mss 1460,sackOK,TS val 3147719892 ecr 0,nop,wscale 9], length 0
+18:53:25.411638 IP soojeong-VirtualBox.37566 > 10.57.189.170.domain: 28105+ PTR? 18.190.125.185.in-addr.arpa. (45)
+18:53:25.462597 IP 10.57.189.170.domain > soojeong-VirtualBox.37566: 28105 1/0/0 PTR is-content-cache-2.ps5.canonical.com. (95)
+18:53:25.524358 IP is-content-cache-2.ps5.canonical.com.http > soojeong-VirtualBox.59660: Flags [S.], seq 570240001, ack 1619368882, win 65535, options [mss 1460], length 0
+18:53:25.524446 IP soojeong-VirtualBox.59660 > is-content-cache-2.ps5.canonical.com.http: Flags [.], ack 1, win 64240, length 0
+18:53:25.524700 IP soojeong-VirtualBox.59660 > is-content-cache-2.ps5.canonical.com.http: Flags [P.], seq 1:89, ack 1, win 64240, length 88: HTTP: GET / HTTP/1.1
+18:53:25.525103 IP is-content-cache-2.ps5.canonical.com.http > soojeong-VirtualBox.59660: Flags [.], ack 89, win 65535, length 0
+18:53:25.649986 IP is-content-cache-2.ps5.canonical.com.http > soojeong-VirtualBox.59660: Flags [P.], seq 1:190, ack 89, win 65535, length 189
+18:53:27.875182 IP6 soojeong-VirtualBox.51846 > is-content-cache-1.canonical.com.http: Flags [.], ack 190, win 64611, length 0
+18:53:27.875428 IP6 soojeong-VirtualBox.51846 > is-content-cache-1.canonical.com.http: Flags [F.], seq 89, ack 191, win 64610, length 0
+18:53:27.875738 IP6 is-content-cache-1.canonical.com.http > soojeong-VirtualBox.51846: Flags [.], ack 90, win 65535, length 0
+18:53:28.542044 IP 10.57.189.170.domain > soojeong-VirtualBox.59135: 54918 1/0/0 PTR is-content-cache-1.canonical.com. (136)
+18:53:28.543361 IP soojeong-VirtualBox.47381 > 10.57.189.170.domain: 7345+ PTR? a.5.0.1.d.5.6.f.1.2.f.5.1.2.3.2.2.0.0.0.7.3.0.f.c.5.2.6.7.1.d.f.ip6.arpa. (90)
+18:53:28.632809 IP 10.57.189.170.domain > soojeong-VirtualBox.47381: 7345 NXDomain 0/1/0 (170)
+^C
+34 packets captured
+34 packets received by filter
+0 packets dropped by kernel
