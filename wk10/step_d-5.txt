@@ -1,0 +1,26 @@
+Step D - Directory Traversal 2: directory_traversal_part1.php?q=%2e%2e%2f
+
+ISSUE (What you see on the browser):
+When q=%2e%2e%2f is passed, the browser sends a URL-encoded version of "../" where:
+  %2e = . (dot)
+  %2e = . (dot)
+  %2f = / (forward slash)
+PHP automatically URL-decodes this value, so $_GET['q'] becomes "../", and scandir()
+scans the parent directory of /var/www/html — which is /var/www.
+
+The browser displays a listing of all files and folders in /var/www, for example:
+  Array ( [0] => . [1] => .. [2] => html )
+
+ISSUE EXPLAINED:
+This demonstrates that simply blocking the literal characters "../" in a URL is NOT
+sufficient protection. Attackers can bypass naive filters by URL-encoding the traversal
+sequences. PHP (and most web servers) decode the URL before passing it to the script,
+meaning the encoded traversal is just as effective as the plaintext one.
+
+SENSITIVE INFORMATION EXPOSED:
+1. The parent directory of the web root (/var/www) is exposed, revealing its structure.
+2. This confirms the web server's directory layout, aiding an attacker in mapping the server.
+3. The vulnerability demonstrates that the application performs NO input validation or
+   decoding detection, making it susceptible to URL-encoding bypass attacks.
+4. Combined with further traversal (e.g., %2e%2e%2f%2e%2e%2f), an attacker could reach
+   the root filesystem and list or access sensitive system files.

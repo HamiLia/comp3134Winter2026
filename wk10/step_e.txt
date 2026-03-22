@@ -1,0 +1,38 @@
+Step E - Directory Traversal Mitigations (directory_traversal_part2.php)
+
+The following two main issues were identified in Step D and are mitigated here:
+
+----------------------------------------------------------------------
+ISSUE 1: User can traverse above the web root (e.g., ?q=../../)
+MITIGATION: Use basename()
+----------------------------------------------------------------------
+The PHP function basename() strips all leading directory components from a path,
+returning only the final filename or folder name. For example:
+  basename("../../etc")  =>  "etc"
+  basename("../secret")  =>  "secret"
+
+By passing the user-supplied input through basename() before using it in scandir(),
+any attempt to navigate upward with "../" sequences is neutralized. The result is
+then combined with the hardcoded web root path (/var/www/html/), ensuring that
+scandir() can only ever look inside the web root directory or its subdirectories.
+
+----------------------------------------------------------------------
+ISSUE 2: Script attempts to scan directories that do not exist
+MITIGATION: Use file_exists()
+----------------------------------------------------------------------
+Before calling scandir(), we now check whether the resulting full path actually
+exists on the server using file_exists(). If the path does not exist, the script
+displays a clean, non-revealing error message ("Error: The specified directory does
+not exist.") and terminates execution. This prevents PHP from throwing a WARNING
+that could leak the server's internal path structure to an attacker.
+
+Additionally, is_dir() is used to confirm the path is a directory (not a file),
+adding a further layer of safety.
+
+----------------------------------------------------------------------
+BONUS MITIGATION: Reject input containing a dot (prevents filename access)
+----------------------------------------------------------------------
+A dot character in the query parameter likely indicates either a filename (e.g.,
+"config.php") or a traversal attempt (e.g., "../"). By checking for the presence
+of a dot using strpos() and rejecting the request if found, we block both filename
+access and URL-encoded dot-based traversal sequences before any other processing occurs.

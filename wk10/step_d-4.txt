@@ -1,0 +1,20 @@
+Step D - Directory Traversal 1: directory_traversal_part1.php?q=../../
+
+ISSUE (What you see on the browser):
+When q=../../ is passed, the script uses scandir() on the path "../../", which navigates
+TWO levels above the current working directory (/var/www/html). This causes the browser
+to display a full listing of all files and folders located two directories up from the
+web root — likely the root-level or near-root-level of the server filesystem.
+
+The browser will show an Array of all directory entries at that traversed path, such as:
+  Array ( [0] => . [1] => .. [2] => bin [3] => boot [4] => etc [5] => home ... )
+
+SENSITIVE INFORMATION EXPOSED:
+1. The top-level server directory structure is fully revealed, allowing an attacker to
+   map out the entire filesystem layout.
+2. The attacker can discover sensitive directories such as /etc, /home, /root, /var, etc.
+3. This confirms a classic Path Traversal / Directory Traversal vulnerability (CWE-22),
+   where user-supplied input is used to construct a file path without sanitization.
+4. From here, an attacker could further craft requests like ?q=../../etc to enumerate
+   configuration files such as /etc/passwd, leaking system user accounts and other data.
+5. No authentication or access control prevents unauthorized directory enumeration.

@@ -1,0 +1,17 @@
+Step D - Mystery Task 1: directory_traversal_part1.php?q=hello
+
+ISSUE (What you see on the browser):
+When the query string parameter q=hello is passed, the PHP script attempts to scan a directory
+named "hello". Since this directory does not exist on the server, the scandir() function fails
+and PHP outputs a WARNING error message such as:
+  "Warning: scandir(hello): failed to open dir: No such file or directory"
+This error message is displayed directly in the browser because display_errors is set to ON.
+
+SENSITIVE INFORMATION EXPOSED:
+1. The full server-side file path is revealed in the error message (e.g., /var/www/html/),
+   exposing the web root directory structure to any attacker.
+2. The PHP version and server environment may be disclosed through the error format.
+3. The fact that error reporting is enabled tells an attacker that the application is poorly
+   configured and likely has other security weaknesses.
+4. An attacker now knows the script accepts unsanitized user input via query string,
+   making it a candidate for further directory traversal attacks.

@@ -1,0 +1,30 @@
+Step G/H - Comments in Source Code Mitigation
+
+PROBLEM IDENTIFIED:
+HTML comments (<!-- ... -->) are sent to the browser as part of the page's HTML source code.
+Any user can right-click a webpage and choose "View Page Source" to read all HTML comments.
+This means sensitive information placed inside HTML comments — such as employee IDs, database
+addresses, admin URLs, passwords, API keys, or server details — is fully visible to anyone
+who views the page source, including attackers.
+
+This is a well-known information disclosure vulnerability (CWE-615: Inclusion of Sensitive
+Information in Source Code Comments).
+
+MITIGATION:
+Convert all HTML comments (<!-- ... -->) to PHP comments (// or /* ... */).
+
+PHP comments are processed on the server side and are NEVER sent to the browser. When the
+PHP engine parses the file, it strips out all PHP comments before generating the HTML output.
+As a result, a user viewing the page source will see clean HTML with no comments at all,
+and no sensitive information can be leaked.
+
+EXAMPLE:
+  BEFORE (HTML comment - visible in browser source):
+    <!-- Admin password: admin1234 -->
+
+  AFTER (PHP comment - never sent to browser):
+    // Admin password: admin1234
+
+Additionally, it is best practice to avoid storing sensitive information in source code
+comments altogether. Credentials, API keys, and internal addresses should be stored in
+environment variables or secure configuration files, not in code.

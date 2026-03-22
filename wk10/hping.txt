@@ -1,0 +1,43 @@
+COMP 3134 - Lab 10: hping3 Commands
+
+============================================================
+Command 1: TCP SYN Flood with Random Source IP (10,000 packets)
+============================================================
+hping3 -S --rand-source --count 10000 --flood 159.203.45.140
+
+Flags explained:
+  -S              : Set TCP SYN flag (SYN flood attack)
+  --rand-source   : Randomize the source IP address for each packet (IP spoofing)
+  --count 10000   : Send exactly 10,000 packets
+  --flood         : Send packets as fast as possible (no delay between packets)
+
+This simulates a TCP SYN flood DDoS attack where the attacker spoofs random
+source IPs, exhausting the target's half-open connection table.
+
+============================================================
+Command 2: UDP Flood with Spoofed Source IP (9,000 packets, ~90 seconds)
+============================================================
+hping3 -2 -a 192.168.1.100 -c 9000 --interval u10000 159.203.45.140
+
+Flags explained:
+  -2              : Use UDP mode (User Datagram Protocol)
+  -a 192.168.1.100: Spoof the source IP address as 192.168.1.100
+  -c 9000         : Send exactly 9,000 packets
+  --interval u10000: Wait 10,000 microseconds between packets (~100 pps, ~90 sec total)
+
+This simulates a UDP flood with a spoofed source address, making it appear
+the traffic originates from a different host (IP spoofing/amplification).
+
+============================================================
+Command 3: ICMP Flood with 1KB Data Payload (11,000 packets, ~75 pps)
+============================================================
+hping3 -1 -d 1000 --faster -c 11000 159.203.45.140
+
+Flags explained:
+  -1              : Use ICMP mode (ping flood / ICMP flood)
+  -d 1000         : Set data payload size to 1,000 bytes (~1KB per packet)
+  --faster        : Send packets at ~10 packets per second (faster than default)
+  -c 11000        : Send exactly 11,000 packets
+
+This simulates an ICMP flood attack (ping flood) with large 1KB payloads,
+consuming significant bandwidth on the target network.
