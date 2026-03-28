@@ -1,0 +1,49 @@
+Lab Exercise 7 - Section C: Query String Observations
+URL tested: https://www.dictionary.com/browse/cybersecurity
+
+==============================================================
+SCENARIO 1: Navigate to the form and type a VALID English word
+==============================================================
+Word entered: "cybersecurity" (via the search form)
+
+Observation:
+The page successfully displays the definition of the word entered. The URL in the browser
+changes to something like: https://www.dictionary.com/browse/cybersecurity
+The page shows the word, its pronunciation, part of speech, and full definition.
+The input is handled safely — the word is passed as part of the URL path and the site
+returns meaningful content. No errors are shown.
+
+==============================================================
+SCENARIO 2: Navigate to the URL and type an INVALID English word after /browse/
+==============================================================
+URL used: https://www.dictionary.com/browse/xyzfakeword123
+
+Observation:
+The page displays a "No results found" message or a "Did you mean...?" suggestion.
+The site handles the invalid input gracefully without crashing or revealing any
+server-side information. The invalid word is shown in the URL but the site
+sanitizes and processes it safely, redirecting to a search results page.
+
+==============================================================
+SCENARIO 3: Navigate to the FORM and type: <script>alert(%27hello%27)</script>
+==============================================================
+Text entered in form: <script>alert(%27hello%27)</script>
+
+Observation:
+No JavaScript alert popup appears. Dictionary.com sanitizes the input before
+processing it. The site either strips the script tags entirely or encodes them
+as HTML entities so they are treated as plain text, not as executable code.
+This is an example of proper XSS (Cross-Site Scripting) mitigation on a
+well-implemented production website.
+
+==============================================================
+SCENARIO 4: Navigate to the URL and type <script>alert(%27hello%27)</script> after term=
+==============================================================
+URL used: https://www.dictionary.com/browse/<script>alert(%27hello%27)</script>
+
+Observation:
+Again, no alert popup appears. Dictionary.com properly sanitizes URL input as well.
+The script tag is either stripped or HTML-encoded before being rendered on the page.
+The browser does NOT execute the injected JavaScript. This demonstrates that
+dictionary.com applies input validation and output encoding on both the form
+and the URL query string, protecting against reflected XSS attacks.

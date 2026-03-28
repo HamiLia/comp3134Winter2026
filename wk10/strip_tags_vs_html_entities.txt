@@ -1,0 +1,62 @@
+Lab Exercise 7 - strip_tags() vs HTML Entities (htmlspecialchars())
+
+==============================================================
+strip_tags()
+==============================================================
+What it does:
+  strip_tags() REMOVES all HTML and PHP tags from a string entirely.
+  The tags and their content structure are deleted, leaving only plain text.
+
+Example:
+  Input:  <script>alert('hello')</script>
+  Output: alert('hello')
+
+  Input:  <b>Hello World</b>
+  Output: Hello World
+
+Pros:
+  - Completely removes any HTML structure from the input
+  - Simple and effective at eliminating tags
+
+Cons:
+  - Destroys the original input — the user's angle brackets and tag-like text are gone
+  - If a user legitimately types something like "<size: 5>", it gets stripped
+  - Does NOT protect against all XSS vectors (e.g., inline event handlers on allowed tags)
+
+==============================================================
+HTML Entities / htmlspecialchars()
+==============================================================
+What it does:
+  htmlspecialchars() CONVERTS special HTML characters into their safe entity equivalents
+  so they are displayed as plain text in the browser instead of being interpreted as HTML.
+
+Conversions applied:
+  &  →  &amp;
+  <  →  &lt;
+  >  →  &gt;
+  "  →  &quot;
+  '  →  &#039;
+
+Example:
+  Input:  <script>alert('hello')</script>
+  Output: &lt;script&gt;alert(&#039;hello&#039;)&lt;/script&gt;
+  (Browser displays it as text: <script>alert('hello')</script>)
+
+Pros:
+  - Preserves the original input visually (user sees what they typed)
+  - Prevents the browser from executing or rendering the input as HTML/JS
+  - Considered the safer and more recommended approach for output encoding
+
+Cons:
+  - The encoded characters are still present in the HTML source (just not rendered)
+  - Requires consistent application at every output point
+
+==============================================================
+KEY DIFFERENCE SUMMARY
+==============================================================
+strip_tags()      → Removes tags completely. Input data is lost/altered.
+htmlspecialchars() → Encodes tags so they display as text. Input data is preserved visually.
+
+For security best practice, htmlspecialchars() is generally preferred because it
+safely encodes output without destroying data, following the principle of
+"never trust user input — always encode on output."
