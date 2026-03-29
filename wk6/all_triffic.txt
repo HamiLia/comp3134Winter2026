@@ -1,0 +1,12 @@
+# COMP3134 - Lab Exercise 5 - Section C
+# Command to listen to ALL incoming and outgoing traffic on the Droplet
+# and write the output to a file named all_traffic_YYYYMMDD_HHMM
+
+tcpdump -i any -w all_traffic_$(date +%Y%m%d_%H%M)
+
+# Explanation:
+# tcpdump    - packet capture tool
+# -i any     - listen on ALL network interfaces (incoming + outgoing)
+# -w         - write output to a file (instead of standard output)
+# $(date +%Y%m%d_%H%M) - automatically inserts current date and time
+#              e.g., all_traffic_20260328_1700
